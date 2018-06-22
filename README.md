@@ -19,6 +19,10 @@ from both SharePoint On-Premises and SharePoint Online.
 * Times the upload and download
 * Gives an estimate on bandwidth used
 * Ping and Traceroute to SharePoint
+* Test-SPPerformance
+  * Works with On-Premises or D/ITAR
+* Test-SPOPerformance
+  * Works with SPO including ADFS
 
 ## Getting Started
 
