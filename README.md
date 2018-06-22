@@ -36,4 +36,3 @@ Once you have the scripts downloaded, you will need to edit the variables at the
 scripts using the same format as the sample variables provided.
 
 Next, simply run the script and login to SharePoint.
-
