@@ -1,6 +1,9 @@
-$filePath = "./DummyFile.txt"
+# Edit the variables below
 $siteUrl = "http://sp/sites/test"
 $docLib = "Documents"
+
+# Do not edit anything below this line
+$filePath = "./DummyFile.txt"
 
 Add-Type -Path .\2013Client\Microsoft.SharePoint.Client.dll -ErrorAction Stop
 Add-Type -Path .\2013Client\Microsoft.SharePoint.Client.Runtime.dll  -ErrorAction Stop
@@ -37,7 +40,7 @@ $fileCreationInfo.Url = "DummyFile.txt"
 
 $upload = $list.RootFolder.Files.Add($fileCreationInfo)
 $clientContext.Load($upload)
-
+Write-Host "`nStarted at $(Get-Date)"
 Write-Host "`nUploading dummy file to $siteUrl"
 $time = Measure-Command { $clientContext.ExecuteQuery() }
 "{0} seconds" -f $time.TotalSeconds

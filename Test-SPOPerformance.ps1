@@ -1,7 +1,10 @@
-$filePath = "./DummyFile.txt"
+# Edit the variables below
 $siteUrl = "https://devtenant.sharepoint.com/sites/teamtest2"
 $downloadPath = "/sites/teamtest2/Shared Documents/DummyFile.txt"
 $uploadPath = "Shared Documents"
+
+# Do not edit anything below this line
+$filePath = "./DummyFile.txt"
 
 function New-LargeFile {
   Param ([string] $fileSize) # Specified as bytes
