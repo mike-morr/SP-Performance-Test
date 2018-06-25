@@ -64,7 +64,12 @@ $time = Measure-Command { $clientContext.ExecuteQuery() }
 
 $hostName = New-Object Uri($siteUrl)
 Write-Host "`nPinging $siteUrl"
-Test-Connection $hostName.Host -Count 10 -Delay 3
+try {
+  Test-Connection $hostName.Host -Count 10 -Delay 3  
+}
+catch {
+  Write-Host "Unable to communicate over ICMP with $($hostName.Host)"
+}
 
 Write-Host "`nTracing route to $siteUrl"
 $hosts = Test-NetConnection $hostName.Host -TraceRoute | Select-Object -ExpandProperty TraceRoute
