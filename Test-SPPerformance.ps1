@@ -48,7 +48,7 @@ $fileCreationInfo.Url = "DummyFile.txt"
 $upload = $list.RootFolder.Files.Add($fileCreationInfo)
 $clientContext.Load($upload)
 Write-Host "`nStarted at $(Get-Date)"
-Write-Host "`nUploading dummy file to $siteUrl"
+Write-Host "`nUploading $($fileSizeInMB)MB dummy file to $siteUrl"
 $time = Measure-Command { $clientContext.ExecuteQuery() }
 "{0} seconds" -f $time.TotalSeconds
 "{0:N2} Mbit/sec" -f (($fileSizeInMB / ($time.TotalSeconds)) * 8)
@@ -64,7 +64,7 @@ $clientContext.ExecuteQuery()
 
 $file.OpenBinaryStream() | Out-Null
 
-Write-Host "`nDownloading dummy file from $siteUrl"
+Write-Host "`nDownloading $($fileSizeInMB)MB dummy file from $siteUrl"
 $time = Measure-Command { $clientContext.ExecuteQuery() }
 "{0} seconds" -f $time.TotalSeconds
 "{0:N2} Mbit/sec" -f (($fileSizeInMB / ($time.TotalSeconds)) * 8)

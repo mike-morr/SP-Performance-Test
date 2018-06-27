@@ -28,12 +28,12 @@ New-LargeFile -FileSize (1024 * $fileSizeInMB * 1000) # Creates file at specifie
 
 Connect-PnPOnline $siteUrl -UseWebLogin
 Write-Host "`nStarted at $(Get-Date)"
-Write-Host "`nUploading dummy file to $siteUrl"
+Write-Host "`nUploading $($fileSizeInMB)MB dummy file to $siteUrl"
 $time = Measure-Command { Add-PnPFile -Folder $uploadPath -Path $filePath }
 "{0} seconds" -f $time.TotalSeconds
 "{0:N2} Mbit/sec" -f (($fileSizeInMB / ($time.TotalSeconds)) * 8)
 
-Write-Host "`nDownloading dummy file from $siteUrl"
+Write-Host "`nDownloading $($fileSizeInMB)MB dummy file from $siteUrl"
 $time = Measure-Command { Get-PnpFile -Url $downloadPath -AsString | Out-Null }
 "{0} seconds" -f $time.TotalSeconds
 "{0:N2} Mbit/sec" -f (($fileSizeInMB / ($time.TotalSeconds)) * 8)
