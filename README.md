@@ -13,7 +13,7 @@ from both SharePoint On-Premises and SharePoint Online.
 
 ## Features
 
-* Creates a 100MB dummy file
+* Creates a dummy file of the specified size
 * Uploads the dummy file to SharePoint
 * Downloads the dummy file from SharePoint
 * Times the upload and download
