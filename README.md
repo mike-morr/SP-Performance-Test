@@ -1,6 +1,6 @@
 # Test SharePoint Performance
 
-This repo contains 2 basic performance scripts for collecting basic performance data
+This repo contains 2 basic performance scripts for collecting performance data
 from both SharePoint On-Premises and SharePoint Online.
 
 ## Prerequisites
@@ -35,4 +35,12 @@ at the top of this page.
 Once you have the scripts downloaded, you will need to edit the variables at the top of the
 scripts using the same format as the sample variables provided.
 
-Next, simply run the script and login to SharePoint.
+Next, run the script specifying the fileSize in MB and optional parameters if needed
+
+## Examples
+
+```Test-SPOPerformance -fileSizeInMB 100```
+
+You can skip the ping and trace route as well
+
+```Test-SPOPerformance -fileSizeInMB 100 -noPing -noTraceRoute```
